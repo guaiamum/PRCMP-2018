@@ -1,0 +1,1 @@
+tr -s " " < clientes.txt | grep [ˆa-z] > clientes1.txt

@@ -1,0 +1,10 @@
+man ls | sort -o manual_ls.ordenado
+
+wc -l; wc -w; wc --chars
+
+tr [:lower:] [:upper:] < manual_ls.ordenado > manual_ls.sort.upper
+
+tr /'AEIOU'//g -d < manual_ls.sort.upper > manual_ls.sort.upper.no_vowels
+
+ls -l /usr/bin/ | tail -50 | tr -s " "
+ls -l /usr/bin/ | tail -50 | tr -s " " | cut -f1,3,9 -d" " > bin-output 
