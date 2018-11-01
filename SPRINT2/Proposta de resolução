@@ -1,0 +1,16 @@
+A minha proposta de resolução:
+
+1. 
+a) head –6 dados.txt | tail –4 >> texto.txt 
+b) find / -type f ! -iname [a-z]\*  –name ‘*.txt’ -exec cp {} ~/temp \; 
+2. 
+a) cat clientes.txt | grep ‘[a-z]’  
+   ou 
+   cat clientes.txt | grep ‘[[:lower:]]’ 
+b) grep . clientes.txt | cut –f2 –d"#” | tr –d “ “ | wc –L 
+   ou 
+   cut –f2 –d"#” clientes.txt | tr –d “ “ | wc –L 
+3. 
+  find / -name ‘*.doc’ -iname ‘manuelalegre-*’ | grep –vi ‘poesia’ 
+4.  
+  find . -type f –iname ‘*PRCMP*.txt’ 
