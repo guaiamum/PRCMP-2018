@@ -9,7 +9,7 @@ elif [ ! -f $1 ]; then
 	echo "O documento passado como parametro não existe!"
 else
 	while read line; do
-		echo $line | cut -f(1-4) -d";"
+
 		nib=$(echo $line | cut -f4 -d";")
 		size=$(echo -n $nib | wc -c | tr -d " ")
 		nomeCliente=$(echo $line | cut -f1 -d";")

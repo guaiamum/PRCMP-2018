@@ -4,9 +4,10 @@
 # validar se diretório surf vazio?
 # validar se diretório de cada praia vazio?
 
+rootdir="test/surf/"
 
 # [1º CICLO FOR] percorre todas os diretórios com nomes de praias encontrados no diretório /surf
-for praia in $(find ~/prcmpPL/sprint3/surf -type d -not -name surf -maxdepth 1)
+for praia in $(find $rootdir -type d -not -name surf -maxdepth 1)
 do
 
 #	echo "$praia"
@@ -28,7 +29,7 @@ do
 
 	# Cria um ficheiro vazio no formato: <nomeDaPraia>_<parâmetro>.csv. Se este ficheiro já existir,
 	# todo o seu conteúdo é eliminado..
-	echo -n "" > ~/prcmpPL/sprint3/surf/$nomePraia\_$1.txt
+	echo -n "" > $rootdir/$nomePraia\_$1.txt
 	
 	# [2º CICLO FOR] percorre todos os ficheiros no formato 2018-??-??.txt, encontrados
 	# em cada um dos diretórios correspondentes a praias 'passadas', individualmente, em cada ciclo
@@ -45,7 +46,7 @@ do
 		
 		# Adiciona ao ficheiro criado, os dados recolhidos em cada um dos ficheiros 'passados' 
 		# em cada ciclo do 2º ciclo FOR, para o respetivo parâmetro, no formato <data>;<valorDoParametro>.
-		echo "$data;$valor" >> ~/prcmpPL/sprint3/surf/$nomePraia\_$1.txt
+		echo "$data;$valor" >> $rootdir/$nomePraia\_$1.txt
 		
 	done
 done

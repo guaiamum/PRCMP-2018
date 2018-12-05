@@ -1,0 +1,1 @@
+TEMP:22 ONDL:2.5 V:15 D:N
