@@ -5,11 +5,11 @@ referenciasBancos="$1"
 
 if [ $# -eq 0 ]; then 
 	printf "Não foi introduzido nenhum parametro no script!\nCertifique-se de que passa o doc. com as referencias dos bancos como argumento.\n"
-elif [ ! -f $referenciasBancos ]; then
+elif [ ! -f $1 ]; then
 	echo "O documento passado como parametro não existe!"
 else
 	while read line; do
-		
+		echo $line | cut -f(1-4) -d";"
 		nib=$(echo $line | cut -f4 -d";")
 		size=$(echo -n $nib | wc -c | tr -d " ")
 		nomeCliente=$(echo $line | cut -f1 -d";")
